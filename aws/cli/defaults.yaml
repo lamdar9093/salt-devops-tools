@@ -1,0 +1,4 @@
+awscliv2:
+  enabled: true
+  version: 2.8.2
+  

@@ -1,0 +1,3 @@
+kubectl:
+  enabled: true
+  version: 1.25.2

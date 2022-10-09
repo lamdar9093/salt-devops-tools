@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+kubernetes:
+  cli:
+    enabled: true
+
+aws:
+  cli:
+    enabled: true
