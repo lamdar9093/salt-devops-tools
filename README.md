@@ -33,5 +33,5 @@ EOF
 ```bash
 sudo apt update -y \
 && sudo apt upgrade -y \
-&& sudo apt install salt-minion
+&& sudo apt install -y salt-minion
 ```
