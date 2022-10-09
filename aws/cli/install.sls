@@ -3,7 +3,6 @@
 
 {% from tpldir ~ "/map.jinja" import awscliv2 with context %}
 
-{%- if awscliv2.enabled %}
 awscliv2:
   archive.extracted:
     - name: /tmp/awscli
@@ -22,19 +21,3 @@ awscliv2:
     - unless: cmp -s /usr/local/aws-cli/v2/current/bin/aws /tmp/awscli/aws/dist/aws
   file.absent:
     - name: /tmp/awscli
-{% endif %}
-
-
-{%- if not awscliv2.enabled %}
-awscliv2-teardown-install:
-  file.absent:
-    - name: /usr/local/aws-cli
-
-awscliv2-teardown-aws:
-  file.absent:
-    - name: /usr/local/bin/aws
-  
-awscliv2-teardown-aws-completer:
-  file.absent:
-    - name: /usr/local/bin/aws_completer
-{% endif %}
