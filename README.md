@@ -7,7 +7,7 @@ Install WSL Preview and Ubuntu 22.04 LTS from the Microsoft Store
 * [WSL Preview](https://aka.ms/wslstorepage)
 * [Ubuntu 22.04](https://apps.microsoft.com/store/detail/ubuntu-22041-lts)
 
-### Enable Systemd and passwordless sudo
+### Enable Systemd
 
 Launch the Ubuntu distribution, then run the following command to enable SystemD.
 
@@ -18,6 +18,8 @@ systemd = true
 EOF
 ```
 
+## Enable passwordless sudo
+
 Run the following command line to enable passwordless sudo access.
 
 ```bash
@@ -26,7 +28,7 @@ $(id -un) ALL=(ALL:ALL) NOPASSWD:ALL
 EOF
 ```
 
-### Install Salt
+## Install Salt
 
 ```bash
 sudo apt update -y \
