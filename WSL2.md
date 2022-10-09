@@ -9,7 +9,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
 Install WSL Preview and Ubuntu 22.04 LTS from the Microsoft Store
 
 * [WSL Preview](https://aka.ms/wslstorepage)
-* [Ubuntu 22.04](https://apps.microsoft.com/store/detail/ubuntu-22041-lts)
+* [Ubuntu 22.04](https://apps.microsoft.com/store/detail/ubuntu-22041-lts/9PN20MSR04DW)
 
 ## Enable Systemd
 
