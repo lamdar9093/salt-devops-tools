@@ -6,7 +6,8 @@
 pulumi-archive:
   archive.extracted:
     - name: /usr/local/pulumi/{{ pulumi.version }}
-    - source: https://github.com/pulumi/releases/download/v{{ pulumi.version }}/pulumi-v{{ pulumi.version }}-linux-x64.tar.gz
+    - source: https://github.com/pulumi/pulumi/releases/download/v{{ pulumi.version }}/pulumi-v{{ pulumi.version }}-linux-x64.tar.gz
+    - source_hash: https://github.com/pulumi/pulumi/releases/download/v{{ pulumi.version }}/SHA512SUMS
     - skip_verify: true
     - user: root
     - group: root
