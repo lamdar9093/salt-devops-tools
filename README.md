@@ -18,6 +18,14 @@ systemd = true
 EOF
 ```
 
+From a CMD prompt, run the following command to stop the WSL engine.
+
+```bash
+wsl --shutown
+```
+
+Relauch the Ubuntu distribution.
+
 ## Enable passwordless sudo
 
 Run the following command line to enable passwordless sudo access.
