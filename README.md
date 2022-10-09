@@ -35,7 +35,9 @@ sudo git clone https://github.com/fjudith/salt-ubuntu-devops-tools /srv/salt \
 Run the following commands to configure the pillar.
 
 ```bash
-cp -vf /srv/salt/pillar.sls.example /srv/pillar/devops.sls \
+sudo mkdir -vp /srv/pillar \
+&& sudo chown $(id -un) /srv/pillar \
+&& cp -vf /srv/salt/pillar.sls.example /srv/pillar/devops.sls \
 && cp -vf /srv/salt/pillar.top.sls.example /srv/pillar/top.sls
 ```
 
