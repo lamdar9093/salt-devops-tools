@@ -1,6 +1,6 @@
 # salt-ubuntu-devops-tools
 
-## Windows Users
+## Windows Users (Only)
 
 Install WSL Preview and Ubuntu 22.04 LTS from the Microsoft Store
 
