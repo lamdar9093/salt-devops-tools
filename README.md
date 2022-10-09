@@ -21,7 +21,7 @@ EOF
 From a CMD prompt, run the following command to stop the WSL engine.
 
 ```bash
-wsl --shutown
+wsl --shutdown
 ```
 
 Relauch the Ubuntu distribution.
