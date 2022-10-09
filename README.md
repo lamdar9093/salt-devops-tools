@@ -7,14 +7,22 @@ Install WSL Preview and Ubuntu 22.04 LTS from the Microsoft Store
 * [WSL Preview](https://aka.ms/wslstorepage)
 * [Ubuntu 22.04](https://apps.microsoft.com/store/detail/ubuntu-22041-lts)
 
-### Enable Systemd
+### Enable Systemd and passwordless sudo
 
-Launch the Ubuntu distribution, then run the following command line to enable SystemD.
+Launch the Ubuntu distribution, then run the following command to enable SystemD.
 
 ```bash
 cat <<EOF | sudo tee -a /etc/wsl.conf
 [default]
 systemd = true
+EOF
+```
+
+Run the following command line to enable passwordless sudo access.
+
+```bash
+cat <<EOF | sudo tee /etc/sudoers.d/$(id -un)
+$(id -un) ALL=(ALL:ALL) NOPASSWD:ALL
 EOF
 ```
 
