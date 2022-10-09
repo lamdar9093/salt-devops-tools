@@ -4,3 +4,4 @@ base:
     - aws.cli
     - aws.samcli
     - hashicorp.terraform.cli
+    - pulumi.cli
