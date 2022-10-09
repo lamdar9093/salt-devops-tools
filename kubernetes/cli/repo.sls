@@ -20,6 +20,7 @@ kubernetes-package-repository:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Kubernetes Package Repository
     - name: deb [arch={{ grains["osarch"] }}] {{ url }}
     - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    - aptkey: False
     - file: /etc/apt/sources.list.d/kubernetes.list
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
