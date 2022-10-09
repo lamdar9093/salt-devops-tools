@@ -13,7 +13,7 @@ Launch the Ubuntu distribution, then run the following command to enable SystemD
 
 ```bash
 cat <<EOF | sudo tee -a /etc/wsl.conf
-[default]
+[boot]
 systemd = true
 EOF
 ```
