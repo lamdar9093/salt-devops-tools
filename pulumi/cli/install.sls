@@ -6,12 +6,13 @@
 pulumi-archive:
   archive.extracted:
     - name: /usr/local/pulumi/{{ pulumi.version }}
-    - source: https://github.com/pulumi/pulumi/releases/download/v{{ pulumi.version }}/pulumi-v{{ pulumi.version }}-linux-x64.tar.gz
+    - source: https://github.com/pulumi/releases/download/v{{ pulumi.version }}/pulumi-v{{ pulumi.version }}-linux-x64.tar.gz
     - skip_verify: true
     - user: root
     - group: root
     - archive_format: tar
     - enforce_toplevel: false
+    - options: '--strip-components=1'
     - unless: ls /usr/local/pulumi/{{ pulumi.version }}
 
 pulumi:
