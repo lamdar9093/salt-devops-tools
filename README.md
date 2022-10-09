@@ -7,7 +7,7 @@ Install WSL Preview and Ubuntu 22.04 LTS from the Microsoft Store
 * [WSL Preview](https://aka.ms/wslstorepage)
 * [Ubuntu 22.04](https://apps.microsoft.com/store/detail/ubuntu-22041-lts)
 
-## Enable Systemd
+### Enable Systemd
 
 Launch the Ubuntu distribution, then run the following command line to enable SystemD.
 
@@ -18,7 +18,7 @@ systemd = true
 EOF
 ```
 
-## Install Salt
+### Install Salt
 
 ```bash
 sudo apt update -y \
