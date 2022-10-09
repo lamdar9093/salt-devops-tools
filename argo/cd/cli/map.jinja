@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{#- Start imports #}
+{% import_yaml tpldir ~ "/defaults.yaml" or {} as defaults %}
+
+{#- Merge in salt pillar #}
+{% set argocd = salt['pillar.get']('argo:cd:cli', default=defaults['argocd'], merge=True) %}

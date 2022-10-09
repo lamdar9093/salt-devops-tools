@@ -1,0 +1,4 @@
+argo:
+  enabled: true
+  version: 3.4.1
+  
