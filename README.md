@@ -35,3 +35,12 @@ sudo apt update -y \
 && sudo apt upgrade -y \
 && sudo apt install -y git salt-minion
 ```
+
+## Clone this repo
+
+Run the following commands to clone the repository and set appropriate permissions.
+
+```bash
+sudo git clone https://github.com/fjudith/salt-ubuntu-devops-tools /srv/salt \
+&& sudo chown -R $(id -un) /srv/salt
+```
