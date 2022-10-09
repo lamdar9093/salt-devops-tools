@@ -1,0 +1,4 @@
+nuctl:
+  enabled: true
+  version: 1.10.8
+  

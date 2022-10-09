@@ -9,3 +9,5 @@ base:
     - argo.cd.cli
     - argo.workflows.cli
     - openfaas.cli
+    - fission.cli
+    - nuclio.cli
