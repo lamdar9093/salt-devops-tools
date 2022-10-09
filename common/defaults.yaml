@@ -1,0 +1,12 @@
+common:
+  enabled: true
+  common:
+    - wireguard-tools
+    - httpie
+  debian:
+    - python3-dev
+    - build-essential
+  centos:
+    - python3-devel
+
+  

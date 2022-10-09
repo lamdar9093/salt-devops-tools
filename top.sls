@@ -1,5 +1,6 @@
 base:
   "*":
+    - common
     - kubernetes.cli
     - aws.cli
     - aws.samcli
@@ -7,3 +8,4 @@ base:
     - pulumi.cli
     - argo.cd.cli
     - argo.workflows.cli
+    - openfaas.cli
