@@ -16,7 +16,7 @@ samcli:
   cmd.run:
     - cwd: /tmp/samcli
     - name: |
-        ./install
+        ./install --update
     - runas: root
     - unless: cmp -s /usr/local/aws-sam-cli/current/bin/sam /tmp/samcli/dist/sam
   file.absent:

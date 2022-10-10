@@ -3,11 +3,11 @@
 
 {% from tpldir ~ "/map.jinja" import terraform with context %}
 
-{% set repoState = 'absent' %}
+{% set pkgState = 'removed' %}
 {% if terraform.enabled %}
-  {% set repoState = 'installed' %}
+  {% set pkgState = 'installed' %}
 {% endif %}
 
 terraform:
-  pkg.{{ repoState }}:
+  pkg.{{ pkgState }}:
     - version: {{ terraform.version }}

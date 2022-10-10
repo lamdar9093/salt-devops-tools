@@ -3,11 +3,11 @@
 
 {% from tpldir ~ "/map.jinja" import kubectl with context %}
 
-{% set repoState = 'absent' %}
+{% set pkgState = 'removed' %}
 {% if kubectl.enabled %}
-  {% set repoState = 'installed' %}
+  {% set pkgState = 'installed' %}
 {% endif %}
 
 kubectl:
-  pkg.{{ repoState }}:
+  pkg.{{ pkgState }}:
     - version: {{ kubectl.version }}-00

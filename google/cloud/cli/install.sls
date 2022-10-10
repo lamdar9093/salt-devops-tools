@@ -3,11 +3,11 @@
 
 {% from tpldir ~ "/map.jinja" import gcloud with context %}
 
-{% set repoState = 'removed' %}
+{% set pkgState = 'removed' %}
 {% if gcloud.enabled %}
-  {% set repoState = 'installed' %}
+  {% set pkgState = 'installed' %}
 {% endif %}
 
 google-cloud-cli:
-  pkg.{{ repoState }}:
+  pkg.{{ pkgState }}:
     - version: {{ gcloud.version }}-0

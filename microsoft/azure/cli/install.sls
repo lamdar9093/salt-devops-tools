@@ -3,11 +3,11 @@
 
 {% from tpldir ~ "/map.jinja" import az with context %}
 
-{% set repoState = 'absent' %}
+{% set pkgState = 'removed' %}
 {% if az.enabled %}
-  {% set repoState = 'installed' %}
+  {% set pkgState = 'installed' %}
 {% endif %}
 
 azure-cli:
-  pkg.{{ repoState }}:
+  pkg.{{ pkgState }}:
     - version: {{ az.version }}-1~{{ grains["oscodename"] }}
