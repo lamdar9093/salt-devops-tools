@@ -11,7 +11,7 @@
 {%- if grains['os_family']|lower in ('debian',) %}
 {% set url = 'https://apt.releases.hashicorp.com ' ~ grains["oscodename"] ~ ' main' %}
 
-hashicorp-package-repository:
+hashicorp-repo:
   pkgrepo.{{ repoState }}:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Hashicorp Package Repository
     - name: deb [arch={{ grains["osarch"] }}] {{ url }}
@@ -34,7 +34,7 @@ hashicorp-repo:
     - base_url: {{ url }}
     - enabled: 1
     - gpgcheck: 0
-    - file: hashicorp.list
+    - file: hashicorp.repo
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
         {%- else %}

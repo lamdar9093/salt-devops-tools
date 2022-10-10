@@ -15,7 +15,7 @@
     {% set url = 'https://apt.kubernetes.io/ ' ~ 'kubernetes' ~ '-' ~ grains["oscodename"] ~ ' main' %}
   {% endif %}
 
-kubernetes-package-repository:
+kubernetes-repo:
   pkgrepo.{{ repoState }}:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Kubernetes Package Repository
     - name: deb [arch={{ grains["osarch"] }}] {{ url }}
@@ -39,7 +39,7 @@ kubernetes-repo:
     - enabled: 1
     - gpgcheck: 1
     - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg
-    - file: kubernetes.list
+    - file: kubernetes.repo
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
         {%- else %}

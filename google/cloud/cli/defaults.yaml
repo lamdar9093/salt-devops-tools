@@ -1,0 +1,3 @@
+gcloud:
+  enabled: true
+  version: 405.0.0

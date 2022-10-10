@@ -13,4 +13,5 @@ base:
     - fission.cli
     - nuclio.cli
     - hetzner.cli
-    - azure.cli
+    - microsoft.azure.cli
+    - google.cloud.cli
