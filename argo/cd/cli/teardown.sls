@@ -8,5 +8,5 @@ argocd-binary:
     - name: /usr/local/argocd/{{ argocd.version }}
 
 argocd:
-  file.symlink:
+  file.absent:
     - name: /usr/local/bin/argocd
