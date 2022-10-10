@@ -3,10 +3,10 @@
 
 {% from tpldir ~ "/map.jinja" import fission with context %}
 
-argocd-binary:
+fission-binary:
   file.absent:
     - name: /usr/local/fission/{{ fission.version }}
 
-argocd:
-  file.symlink:
+fission:
+  file.absent:
     - name: /usr/local/bin/fission
