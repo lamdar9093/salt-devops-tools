@@ -8,5 +8,5 @@ argo-binary:
     - name: /usr/local/argo/{{ argo.version }}
 
 argo:
-  file.symlink:
+  file.absent:
     - name: /usr/local/bin/argo
