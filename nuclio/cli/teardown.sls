@@ -3,10 +3,10 @@
 
 {% from tpldir ~ "/map.jinja" import nuctl with context %}
 
-argocd-binary:
+nuctl-binary:
   file.absent:
     - name: /usr/local/nuclio/{{ nuctl.version }}
 
-argocd:
-  file.symlink:
+nuctl:
+  file.absent:
     - name: /usr/local/bin/nuctl
