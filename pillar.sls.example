@@ -4,6 +4,12 @@
 common:
   enabled: true
 
+aquasecurity:
+  trivy:
+    enabled: true
+  falco:
+    enabled: true
+
 hashicorp:
   terraform:
     cli:
@@ -15,15 +21,15 @@ pulumi:
 
 kubernetes:
   cli:
-    enabled: true
+    enabled: false
   helm:
-    enabled: true
+    enabled: false
 
 aws:
   cli:
-    enabled: true
+    enabled: false
   samcli:
-    enabled: true
+    enabled: false
 
 microsoft:
   azure:
@@ -37,29 +43,29 @@ google:
 
 hetzner:
   cli:
-    enabled: true
+    enabled: false
 
 scaleway:
   cli:
-    enabled: true
+    enabled: false
 
 argo:
   cd:
     cli:
-      enabled: true
+      enabled: false
   workflows:
     cli:
-      enabled: true
+      enabled: false
 
 openfaas:
   cli:
-    enabled: true
+    enabled: false
 
 nuclio:
   cli:
-    enabled: true
+    enabled: false
 
 fission:
   cli:
-    enabled: true
+    enabled: false
 
