@@ -2,6 +2,7 @@ base:
   "*":
     - common
     - kubernetes.cli
+    - kubernetes.helm
     - aws.cli
     - aws.samcli
     - hashicorp.terraform.cli
