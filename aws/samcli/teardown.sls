@@ -5,7 +5,7 @@
 
 samcli-teardown-install:
   file.absent:
-    - name: /usr/local/aws-sam-cli
+    - name: /usr/local/aws-sam-cli/{{ samcli.version }}
 
 samcli-teardown-sam:
   file.absent:

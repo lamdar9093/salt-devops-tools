@@ -3,7 +3,6 @@
 
 {% from tpldir ~ "/map.jinja" import samcli with context %}
 
-{%- if samcli.enabled %}
 samcli:
   archive.extracted:
     - name: /tmp/samcli
@@ -22,15 +21,3 @@ samcli:
     - unless: cmp -s /usr/local/aws-sam-cli/current/bin/sam /tmp/samcli/dist/sam
   file.absent:
     - name: /tmp/samcli
-{% endif %}
-
-
-{%- if not samcli.enabled %}
-samcli-teardown-install:
-  file.absent:
-    - name: /usr/local/aws-sam-cli
-
-samcli-teardown-sam:
-  file.absent:
-    - name: /usr/local/bin/sam
-{% endif %}
