@@ -1,0 +1,4 @@
+trivy:
+  enabled: true
+  version: 0.32.2
+  
