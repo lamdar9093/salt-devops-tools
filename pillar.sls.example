@@ -57,9 +57,9 @@ openfaas:
 
 nuclio:
   cli:
-    enabled
+    enabled: true
 
 fission:
   cli:
-    enabled true
+    enabled: true
 
