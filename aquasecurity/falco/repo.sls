@@ -41,3 +41,5 @@ falco-repo:
         {%- else %}
     - refresh_db: True
         {%- endif %}
+
+{% endif %}

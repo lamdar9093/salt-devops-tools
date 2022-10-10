@@ -13,7 +13,7 @@
 
 trivy-repo:
   pkgrepo.{{ repoState }}:
-    - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} trivy Security Package Repository
+    - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Trivy Package Repository
     - name: deb [arch={{ grains["osarch"] }}] {{ url }}
     - key_url: https://aquasecurity.github.io/trivy-repo/deb/public.key
     - aptkey: False
@@ -40,3 +40,5 @@ trivy-repo:
         {%- else %}
     - refresh_db: True
         {%- endif %}
+
+{% endif %}
