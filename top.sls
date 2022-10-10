@@ -12,3 +12,4 @@ base:
     - openfaas.cli
     - fission.cli
     - nuclio.cli
+    - hetzner.cli
