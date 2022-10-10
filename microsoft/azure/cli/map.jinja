@@ -5,4 +5,4 @@
 {% import_yaml tpldir ~ "/defaults.yaml" or {} as defaults %}
 
 {#- Merge in salt pillar #}
-{% set az = salt['pillar.get']('microsoft.azure:cli', default=defaults['az'], merge=True) %}
+{% set az = salt['pillar.get']('microsoft:azure:cli', default=defaults['az'], merge=True) %}

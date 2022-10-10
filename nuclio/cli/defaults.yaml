@@ -1,4 +1,4 @@
 nuctl:
-  enabled: true
+  enabled: false
   version: 1.10.8
   

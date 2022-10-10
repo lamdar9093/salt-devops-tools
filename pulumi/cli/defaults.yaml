@@ -1,4 +1,4 @@
 pulumi:
-  enabled: true
+  enabled: false
   version: 3.42.0
   

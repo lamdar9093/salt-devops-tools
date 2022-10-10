@@ -1,4 +1,4 @@
 samcli:
-  enabled: true
+  enabled: false
   version: 1.59.0
   

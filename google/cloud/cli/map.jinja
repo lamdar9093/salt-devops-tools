@@ -5,4 +5,4 @@
 {% import_yaml tpldir ~ "/defaults.yaml" or {} as defaults %}
 
 {#- Merge in salt pillar #}
-{% set gcloud = salt['pillar.get']('google.cloud:cli', default=defaults['gcloud'], merge=True) %}
+{% set gcloud = salt['pillar.get']('google:cloud:cli', default=defaults['gcloud'], merge=True) %}

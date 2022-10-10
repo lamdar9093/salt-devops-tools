@@ -1,5 +1,5 @@
 common:
-  enabled: true
+  enabled: false
   common:
     - wireguard-tools
     - httpie

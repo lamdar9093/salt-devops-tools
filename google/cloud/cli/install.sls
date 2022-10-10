@@ -3,7 +3,7 @@
 
 {% from tpldir ~ "/map.jinja" import gcloud with context %}
 
-{% set repoState = 'absent' %}
+{% set repoState = 'removed' %}
 {% if gcloud.enabled %}
   {% set repoState = 'installed' %}
 {% endif %}

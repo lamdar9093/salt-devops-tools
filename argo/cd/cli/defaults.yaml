@@ -1,4 +1,4 @@
 argocd:
-  enabled: true
+  enabled: false
   version: 2.4.14
   
