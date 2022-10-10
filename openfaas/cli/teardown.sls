@@ -3,10 +3,10 @@
 
 {% from tpldir ~ "/map.jinja" import openfaas with context %}
 
-argocd-binary:
+openfaas-binary:
   file.absent:
     - name: /usr/local/openfaas/{{ openfaas.version }}
 
-argocd:
-  file.symlink:
+openfaas:
+  file.absent:
     - name: /usr/local/bin/openfaas
