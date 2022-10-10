@@ -15,3 +15,4 @@ base:
     - hetzner.cli
     - microsoft.azure.cli
     - google.cloud.cli
+    - scaleway.cli
