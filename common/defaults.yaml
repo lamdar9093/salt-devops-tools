@@ -6,7 +6,7 @@ common:
   debian:
     - python3-dev
     - build-essential
-  centos:
+  redhat:
     - python3-devel
 
   
