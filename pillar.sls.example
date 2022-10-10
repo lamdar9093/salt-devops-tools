@@ -1,10 +1,65 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 
+common:
+  enabled: true
+
+hashicorp:
+  terraform:
+    cli:
+      enabled: true
+
+pulumi:
+  cli:
+    enabled: true
+
 kubernetes:
   cli:
+    enabled: true
+  helm:
     enabled: true
 
 aws:
   cli:
     enabled: true
+  samcli:
+    enabled: true
+
+microsoft:
+  azure:
+    cli:
+      enabled: false
+
+google:
+  cloud:
+    cli:
+      enabled: false
+
+hetzner:
+  cli:
+    enabled: true
+
+scaleway:
+  cli:
+    enabled: true
+
+argo:
+  cd:
+    cli:
+      enabled: true
+  workflows:
+    cli:
+      enabled: true
+
+openfaas:
+  cli:
+    enabled: true
+
+nuclio:
+  cli:
+    enabled
+
+fission:
+  cli:
+    enabled true
+
