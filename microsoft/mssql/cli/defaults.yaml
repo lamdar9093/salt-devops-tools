@@ -1,5 +1,5 @@
 mssql:
-  enabled: true
+  enabled: false
   17:
     version: 17.10.1.1
     minor: 17.10

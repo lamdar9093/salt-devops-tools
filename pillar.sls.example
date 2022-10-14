@@ -35,6 +35,9 @@ microsoft:
   azure:
     cli:
       enabled: false
+  odbc:
+    cli:
+      enabled: false
 
 google:
   cloud:
@@ -69,3 +72,6 @@ fission:
   cli:
     enabled: false
 
+minio:
+  cli:
+    enabled: false

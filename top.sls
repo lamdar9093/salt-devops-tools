@@ -19,3 +19,4 @@ base:
     - fission.cli
     - nuclio.cli
     - microsoft.mssql.cli
+    - minio.cli
