@@ -18,3 +18,4 @@ base:
     - openfaas.cli
     - fission.cli
     - nuclio.cli
+    - microsoft.mssql.cli
