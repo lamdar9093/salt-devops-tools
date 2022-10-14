@@ -15,5 +15,6 @@ odbc-driver-config:
     - user: root
     - group: root
     - mode: "0644"
+    - template: jinja
     - context:
       tpldir: {{ tpldir }}

@@ -43,5 +43,7 @@ mssql:
     - require:
       - pkg: odbc
     - pkgs:
-      - msodbcsql17
-      - mssql-tools
+      - msodbcsql17: {{ mssql.17.version }}-1
+      - mssql-tools: {{ mssql.17.version }}-1
+      - msodbcsql18: {{ mssql.18.version }}-1
+      - mssql-tools18: {{ mssql.18.version}}-1

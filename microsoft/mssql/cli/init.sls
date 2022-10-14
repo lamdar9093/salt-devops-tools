@@ -3,5 +3,5 @@
 
 include:
   - .repo
-  - .config
   - .install
+  - .config

@@ -1,3 +1,8 @@
 mssql:
   enabled: true
-  version: 17.10.1.1
+  17:
+    version: 17.10.1.1
+    minor: 17.10
+  18:
+    version: 18.1.1.1
+    minor: 18.1
