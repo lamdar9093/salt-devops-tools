@@ -16,12 +16,21 @@
   {% endif %}
 
 kubernetes-repo:
+  file.managed:
+    - name: /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+    - source: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    - skip_verify: true
+    - makedirs: true
+    - user: root
+    - group: root
+    - mode: 644
   pkgrepo.{{ repoState }}:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Kubernetes Package Repository
-    - name: deb [arch={{ grains["osarch"] }}] {{ url }}
-    - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    - name: deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] {{ url }}
+    # - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     - aptkey: False
     - file: /etc/apt/sources.list.d/kubernetes.list
+    - clean_file: True
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
         {%- else %}
