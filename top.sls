@@ -20,3 +20,4 @@ base:
     - nuclio.cli
     - microsoft.mssql.cli
     - minio.cli
+    - github.cli

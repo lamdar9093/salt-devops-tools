@@ -75,3 +75,7 @@ fission:
 minio:
   cli:
     enabled: false
+
+github:
+  cli:
+    enabled: true
