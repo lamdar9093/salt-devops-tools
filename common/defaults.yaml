@@ -3,10 +3,16 @@ common:
   common:
     - wireguard-tools
     - httpie
+    - iotop
   debian:
     - python3-dev
     - build-essential
+    - anacron
+    - openssh-server
+    - apt-file
+    - at
   redhat:
     - python3-devel
+    - cronie-anacron
 
   
