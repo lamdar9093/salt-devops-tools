@@ -15,7 +15,7 @@ ldap-common:
     - refresh: True
     - allow_updates: True
     - pkgs:
-      {%- for item in common.common %}
+      {%- for item in ldap.common %}
       - {{ item }}
       {% endfor %}
 
@@ -26,7 +26,7 @@ ldap-debian:
     - refresh: True
     - allow_updates: True
     - pkgs:
-      {%- for item in common.debian %}
+      {%- for item in ldap.debian %}
       - {{ item }}
       {% endfor %}
 {% endif %}
@@ -38,7 +38,7 @@ ldap-redhat:
     - refresh: True
     - allow_updates: True
     - pkgs:
-      {%- for item in commond.redhat %}
+      {%- for item in ldap.redhat %}
       - {{ item }}
       {% endfor %}
 {% endif %}
