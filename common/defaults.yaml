@@ -4,6 +4,7 @@ common:
     - wireguard-tools
     - httpie
     - iotop
+    - bonnie++
   debian:
     - python3-dev
     - build-essential

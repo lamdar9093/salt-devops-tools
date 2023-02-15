@@ -1,0 +1,12 @@
+ldap:
+  enabled: true
+  common:
+    - oddjob-mkhomedir
+    - sssd
+    - sssd-ldap
+    - sssd-tools
+  debian:
+    - ldap-utils
+  redhat:
+    - openldap-clients
+  

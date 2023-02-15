@@ -25,6 +25,9 @@ kubernetes:
   helm:
     enabled: false
 
+ldap:
+  enabled: true
+
 aws:
   cli:
     enabled: false
