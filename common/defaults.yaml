@@ -5,6 +5,8 @@ common:
     - httpie
     - iotop
     - bonnie++
+    - git
+    - subversion
   debian:
     - python3-dev
     - build-essential
