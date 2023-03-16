@@ -1,6 +1,6 @@
 # Setup Windows Subsystem for Linux 2 (WSL2)
 
-Run the following command from a CMD or Powershell prompt with Administrator privileges.
+Run the following command from a Powershell or Powershell prompt with Administrator privileges.
 
 ```Powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
