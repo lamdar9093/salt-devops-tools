@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+docker:
+  process_signature: '/usr/bin/docker'
+  install_docker_py: true
+  python_package: docker
+  refresh_repo: true
+  configfile: /etc/default/docker
+  config: []
+  daemon_config: {}
+  rootuser: root
+  data_dir: /var/lib/docker
+
+  use_upstream_repo: true
+  proxy: false
+
+  pkgs:
+    - iptables
+    - ca-certificates
+    - gnupg
+
+  daemon:
+    enabled: true
+    version: 23.0.3
+  
+  cli:
+    enabled: true
+    version: 23.0.3
+  
+  containerd:
+    enabled: true
+    version: 1.6.20
+  
+  buildx_plugin:
+    enabled: true
+    version: 0.10.4
+  
+  compose_plugin:
+    enabled: true
+    version: 2.17.2

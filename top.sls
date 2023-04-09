@@ -1,6 +1,7 @@
 base:
   "*":
     - common
+    - docker
     - aws.cli
     - aws.samcli
     - hetzner.cli
