@@ -23,3 +23,4 @@ base:
     - microsoft.mssql.cli
     - minio.cli
     - github.cli
+    - go.sdk

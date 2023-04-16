@@ -82,3 +82,7 @@ minio:
 github:
   cli:
     enabled: true
+
+go:
+  sdk:
+    enabled: true
