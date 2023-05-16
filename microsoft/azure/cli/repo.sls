@@ -12,10 +12,25 @@
   {% set url = 'https://packages.microsoft.com/repos/azure-cli ' ~ grains["oscodename"] ~ ' main' %}
 
 azure-cli-repo:
+  file.managed:
+    - name: /etc/apt/keyrings/microsoft-archive-keyring.key
+    - source: https://packages.microsoft.com/keys/microsoft.asc
+    - skip_verify: true
+    - makedirs: true
+    - user: root
+    - group: root
+    - mode: 644
+  cmd.run:
+    - watch:
+      - file: /etc/apt/keyrings/microsoft-archive-keyring.key
+    - name: |
+        cat /etc/apt/keyrings/microsoft-archive-keyring.key \
+        | gpg --dearmor | \
+        tee /etc/apt/keyrings/microsoft-archive-keyring.gpg > /dev/null
   pkgrepo.{{ repoState }}:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Azure CLI Package Repository
-    - name: deb [arch={{ grains["osarch"] }}] {{ url }}
-    - key_url: https://packages.microsoft.com/keys/microsoft.asc
+    - name: deb [arch={{ grains["osarch"] }} signed-by=/etc/apt/keyrings/microsoft-archive-keyring.gpg] {{ url }}
+    # - key_url: https://packages.microsoft.com/keys/microsoft.asc
     - aptkey: False
     - file: /etc/apt/sources.list.d/azure-cli.list
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
