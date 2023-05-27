@@ -12,27 +12,19 @@
 {% set url = 'https://apt.releases.hashicorp.com ' ~ grains["oscodename"] ~ ' main' %}
 
 hashicorp-repo:
-  file.managed:
-    - name: /etc/apt/keyrings/hashicorp-archive-keyring.key
-    - source: https://apt.releases.hashicorp.com/gpg
-    - skip_verify: true
-    - makedirs: true
-    - user: root
-    - group: root
-    - mode: 644
   cmd.run:
-    - watch:
-      - file: /etc/apt/keyrings/hashicorp-archive-keyring.key
     - name: |
-        cat /etc/apt/keyrings/hashicorp-archive-keyring.key \
-        | gpg --dearmor | \
-        tee /etc/apt/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+        curl -fsSL https://apt.releases.hashicorp.com/gpg \
+        | gpg --yes --dearmor -o /etc/apt/keyrings/hashicorp-archive-keyring.gpg
   pkgrepo.{{ repoState }}:
+    - require:
+      - cmd: hashicorp-repo
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Hashicorp Package Repository
     - name: deb [arch={{ grains["osarch"] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] {{ url }}
-    # - key_url: https://apt.releases.hashicorp.com/gpg
-    - aptkey: False
+    - key_url: https://apt.releases.hashicorp.com/gpg
     - file: /etc/apt/sources.list.d/hashicorp.list
+    - aptkey: False
+    - clean_file: True
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
         {%- else %}

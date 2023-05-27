@@ -51,6 +51,11 @@ Edit the `/etc/pillar/devops.sls` to customize installed tools
 Run the following command to install the tools locally with Salt (i.e. Salt Masterless)
 
 ```bash
-sudo salt-call --local  state.highstate --file-root=/srv/salt --pillar-root=/srv/pillar --retcode-passthrough -l info
+sudo salt-call --local state.highstate
 ```
 
+**Debug only**:
+
+```bash
+sudo salt-call --local  state.highstate --file-root=/srv/salt --pillar-root=/srv/pillar --retcode-passthrough -l info
+```

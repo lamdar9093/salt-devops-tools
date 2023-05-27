@@ -19,18 +19,20 @@ githubcli-repo:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 644
+    - mode: '0644'
   pkgrepo.{{ repoState }}:
+    - resuire:
+      - file: githubcli-repo
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Github CLI Package Repository
-    - name: deb [signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] {{ url }}
-    - aptkey: False
+    - name: deb [arch={{ grains["osarch"] }} signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] {{ url }}
     - file: /etc/apt/sources.list.d/githubcli.list
+    - aptkey: False
     - clean_file: True
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
-        {%- else %}
+    {%- else %}
     - refresh_db: True
-        {%- endif %}
+    {%- endif %}
 
 {%- elif grains['os_family']|lower in ('redhat',) %}
 {% set url = 'https://cli.github.com/packages/rpm/gh-cli.repo' %}
@@ -45,8 +47,8 @@ githubcli-repo:
     - file: githubcli.repo
     {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
-        {%- else %}
+    {%- else %}
     - refresh_db: True
-        {%- endif %}
+    {%- endif %}
 
 {% endif %}

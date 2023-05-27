@@ -10,34 +10,23 @@
 {% set url = 'https://download.docker.com/linux/ubuntu ' ~ grains["oscodename"] ~ ' stable' %}
 
 docker-repo:
-  file.managed:
-    - name: /etc/apt/keyrings/docker-archive-keyring.key
-    - source: https://download.docker.com/linux/ubuntu/gpg
-    - skip_verify: true
-    - makedirs: true
-    - user: root
-    - group: root
-    - mode: 644
   cmd.run:
-    - watch:
-      - file: /etc/apt/keyrings/docker-archive-keyring.key
     - name: |
-        cat /etc/apt/keyrings/docker-archive-keyring.key \
-        | gpg --dearmor | \
-        tee /etc/apt/keyrings/docker-archive-keyring.gpg > /dev/null
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+        | gpg --yes --dearmor -o /etc/apt/keyrings/docker-archive-keyring.gpg
   pkgrepo.{{ repo_state }}:
+    - require:
+      - cmd: docker-repo
     - humanname: {{ grains["os"] }} {{ grains["oscodename"]|capitalize }} Docker Package Repository
     - name: deb [arch={{ grains["osarch"] }} signed-by=/etc/apt/keyrings/docker-archive-keyring.gpg] {{ url }}
     - file: /etc/apt/sources.list.d/docker.list
-        {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
+    - aptkey: False
+    - clean_file: True
+    {%- if grains['saltversioninfo'] >= [2018, 3, 0] %}
     - refresh: True
-        {%- else %}
+    {%- else %}
     - refresh_db: True
-        {%- endif %}
-    {# - require_in:
-      - pkg: docker
-    - require:
-      - pkg: docker-dependencies #}
+    {%- endif %}
 
 {%- elif grains['os_family']|lower in ('redhat',) %}
 {% set url = 'https://yum.dockerproject.org/repo/main/centos/$releasever/' if docker.use_old_repo else docker.repo.url_base %}
@@ -54,11 +43,6 @@ docker-repo:
     {% else %}
     - gpgkey: https://download.docker.com/linux/centos/gpg
     {% endif %}
-    {# - require_in:
-      - pkg: docker-package
-    - require:
-      - pkg: docker-package-dependencies #}
-
 {%- else %}
 docker-repo: {}
 {%- endif %}

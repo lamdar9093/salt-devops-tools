@@ -12,22 +12,13 @@
   {% set url = 'https://aquasecurity.github.io/trivy-repo' ~ '/deb '~ grains["oscodename"] ~ ' main' %}
 
 trivy-repo:
-  file.managed:
-    - name: /etc/apt/keyrings/trivy-archive-keyring.key
-    - source: https://aquasecurity.github.io/trivy-repo/deb/public.key
-    - skip_verify: true
-    - makedirs: true
-    - user: root
-    - group: root
-    - mode: 644
   cmd.run:
-    - watch:
-      - file: /etc/apt/keyrings/trivy-archive-keyring.key
     - name: |
-        cat /etc/apt/keyrings/trivy-archive-keyring.key \
-        | gpg --dearmor | \
-        tee /etc/apt/keyrings/trivy-archive-keyring.gpg > /dev/null
+        curl -fsSL https://aquasecurity.github.io/trivy-repo/deb/public.key \
+        | gpg --yes --dearmor -o /etc/apt/keyrings/trivy-archive-keyring.gpg
   pkgrepo.{{ repoState }}:
+    - require:
+      - cmd: trivy-repo
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Trivy Package Repository
     - name: deb [signed-by=/etc/apt/keyrings/trivy-archive-keyring.gpg] {{ url }}
     # - key_url: https://aquasecurity.github.io/trivy-repo/deb/public.key
