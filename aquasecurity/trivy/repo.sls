@@ -9,7 +9,7 @@
 {% endif %}
 
 {%- if grains['os_family']|lower in ('debian',) %}
-  {% set url = 'https://aquasecurity.github.io/trivy-repo/deb ' ~ grains["oscodename"] ~ ' main' %}
+  {% set url = 'https://aquasecurity.github.io/trivy-repo' ~ '/deb '~ grains["oscodename"] ~ ' main' %}
 
 trivy-repo:
   file.managed:
