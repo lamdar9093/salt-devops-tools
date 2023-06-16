@@ -3,6 +3,7 @@ base:
     - common
     - docker
     - aws.cli
+    - aws.nuke
     - aws.samcli
     - hetzner.cli
     - microsoft.azure.cli

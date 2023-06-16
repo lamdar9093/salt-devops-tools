@@ -1,0 +1,4 @@
+aws_nuke:
+  enabled: false
+  version: 2.22.1
+  

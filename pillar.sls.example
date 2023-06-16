@@ -31,6 +31,8 @@ ldap:
 aws:
   cli:
     enabled: false
+  nuke:
+    enabled: false
   samcli:
     enabled: false
 
