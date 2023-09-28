@@ -44,7 +44,31 @@ sudo mkdir -vp /srv/pillar \
 && cp -vf /srv/salt/pillar.top.sls.example /srv/pillar/top.sls
 ```
 
-Edit the `/etc/pillar/devops.sls` to customize installed tools
+Edit the `/etc/pillar/devops.sls` to customize installed tools.
+
+**example**:
+
+```yaml
+common:
+  enabled: true
+aquasecurity:
+  trivy:
+    enabled: true
+  falco:
+    enabled: false
+hashicorp:
+  terraform:
+    cli:
+      enabled: true
+pulumi:
+  cli:
+    enabled: false
+kubernetes:
+  cli:
+    enabled: true
+  helm:
+    enabled: true
+```
 
 ## Installation
 
