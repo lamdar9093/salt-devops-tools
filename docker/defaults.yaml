@@ -22,20 +22,20 @@ docker:
 
   daemon:
     enabled: true
-    version: 23.0.3
+    version: 24.0.6
   
   cli:
     enabled: true
-    version: 23.0.3
+    version: 24.0.6
   
   containerd:
     enabled: true
-    version: 1.6.20
+    version: 1.6.24
   
   buildx_plugin:
     enabled: true
-    version: 0.10.4
+    version: 0.11.2
   
   compose_plugin:
     enabled: true
-    version: 2.17.2
+    version: 2.21.0
