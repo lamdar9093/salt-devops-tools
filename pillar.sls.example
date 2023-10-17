@@ -4,6 +4,12 @@
 common:
   enabled: true
 
+sops:
+  cli: true
+
+yq:
+  cli: true
+
 aquasecurity:
   trivy:
     enabled: true

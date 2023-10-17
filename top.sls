@@ -26,3 +26,4 @@ base:
     - github.cli
     - go.sdk
     - sops.cli
+    - yq.cli
