@@ -25,3 +25,4 @@ base:
     - minio.cli
     - github.cli
     - go.sdk
+    - sops.cli
