@@ -8,6 +8,7 @@ common:
     - git
     - subversion
     - age
+    - jq
   debian:
     - python3-dev
     - build-essential
