@@ -12,11 +12,11 @@ yq-binary:
     - makedirs: true
     - user: root
     - group: root
-    - mode: 755
+    - mode: '0755'
     - unless: ls /usr/local/yq/{{ yq.version }}
 
 yq:
   file.symlink:
     - name: /usr/local/bin/yq
     - target: /usr/local/yq/{{ yq.version }}/yq
-    - mode: 755
+    - mode: '0755'

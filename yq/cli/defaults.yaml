@@ -1,4 +1,4 @@
 yq:
-  enabled: false
+  enabled: true
   version: 4.35.2
   
