@@ -1,0 +1,4 @@
+flux2:
+  enabled: false
+  version: 2.1.2
+  

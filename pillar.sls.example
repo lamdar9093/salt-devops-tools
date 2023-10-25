@@ -94,3 +94,7 @@ github:
 go:
   sdk:
     enabled: true
+
+flux2:
+  cli:
+    enabled: true
