@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{#- Start imports #}
+{% import_yaml tpldir ~ "/defaults.yaml" or {} as defaults %}
+
+{#- Merge in salt pillar #}
+{% set fluxcd = salt['pillar.get']('fluxcd:cli', default=defaults['fluxcd'], merge=True) %}

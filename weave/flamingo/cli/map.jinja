@@ -5,4 +5,4 @@
 {% import_yaml tpldir ~ "/defaults.yaml" or {} as defaults %}
 
 {#- Merge in salt pillar #}
-{% set flux2 = salt['pillar.get']('flux2:cli', default=defaults['flux2'], merge=True) %}
+{% set flamingo = salt['pillar.get']('weave:flamingo:cli', default=defaults['flamingo'], merge=True) %}

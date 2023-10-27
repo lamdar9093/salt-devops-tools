@@ -1,0 +1,4 @@
+flamingo:
+  enabled: false
+  version: 0.3.1
+  

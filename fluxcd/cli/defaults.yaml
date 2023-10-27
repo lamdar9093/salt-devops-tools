@@ -1,4 +1,4 @@
-flux2:
+fluxcd:
   enabled: false
   version: 2.1.2
   

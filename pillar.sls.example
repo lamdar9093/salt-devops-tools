@@ -95,6 +95,11 @@ go:
   sdk:
     enabled: true
 
-flux2:
+fluxcd:
   cli:
     enabled: true
+
+weave:
+  flamingo:
+    cli:
+      enabled: true

@@ -27,4 +27,5 @@ base:
     - go.sdk
     - sops.cli
     - yq.cli
-    - flux2.cli
+    - fluxcd.cli
+    - weave.flamingo.cli
