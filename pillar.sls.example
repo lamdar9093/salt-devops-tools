@@ -102,4 +102,8 @@ fluxcd:
 weave:
   flamingo:
     cli:
-      enabled: true
+      enabled: false
+  gitops:
+    cli:
+      enabled: false
+  

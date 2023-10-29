@@ -29,3 +29,4 @@ base:
     - yq.cli
     - fluxcd.cli
     - weave.flamingo.cli
+    - weave.gitops.cli
