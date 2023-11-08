@@ -11,8 +11,4 @@
 githubcli-packages:
   pkg.{{ pkgState }}:
     - pkgs:
-        {%- if grains['os_family']|lower in ('debian',) %}     
-        - gh: {{ githubcli.version }}
-        {%- elif grains['os_family']|lower in ('redhat',) %}
-        - gh: {{ githubcli.version }}-1
-        {%- endif %}
+        - gh
