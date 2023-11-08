@@ -11,8 +11,4 @@
 trivy-packages:
   pkg.{{ pkgState }}:
     - pkgs:
-        {%- if grains['os_family']|lower in ('debian',) %}     
-        - trivy: {{ trivy.version }}
-        {%- elif grains['os_family']|lower in ('redhat',) %}
-        - trivy: {{ trivy.version }}-1
-        {%- endif %}
+        - trivy
