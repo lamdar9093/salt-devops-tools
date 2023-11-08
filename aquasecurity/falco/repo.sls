@@ -14,7 +14,7 @@
 falco-repo:
   cmd.run:
     - name: |
-        curl -fsSL https://falco.org/repo/falcosecurity-packages.asc \
+        curl -fsSL https://aquasecurity.github.io/trivy-repo/deb/public.key \
         | gpg --yes --dearmor -o /usr/share/keyrings/falco-archive-keyring.gpg
   pkgrepo.{{ repoState }}:
     - humanname: {{ grains["os"] }} {{ grains["oscodename"] | capitalize }} Falco Security Package Repository
