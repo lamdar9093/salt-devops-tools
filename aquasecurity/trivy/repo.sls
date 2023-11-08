@@ -14,7 +14,7 @@
 trivy-repo:
   cmd.run:
     - name: |
-        curl -fsSL https://falco.org/repo/falcosecurity-packages.asc \
+        curl -fsSL https://aquasecurity.github.io/trivy-repo/deb/public.key \
         | gpg --yes --dearmor -o /etc/apt/keyrings/trivy-archive-keyring.gpg
   pkgrepo.{{ repoState }}:
     - require:
