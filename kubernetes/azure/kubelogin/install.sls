@@ -9,10 +9,11 @@ azurekubelogin-archive:
     - source: https://github.com/Azure/kubelogin/releases/download/v{{ azurekubelogin.version }}/kubelogin-linux-amd64.zip
     - source_hash: https://github.com/Azure/kubelogin/releases/download/v{{ azurekubelogin.version }}/kubelogin-linux-amd64.zip.sha256
     - skip_verify: false
-    - user: root
-    - group: root
+    # - user: root
+    # - group: root
     - archive_format: zip
-    - enforce_toplevel: true
+    - enforce_toplevel: false
+    - options: '-j'  # junk paths (do not make directories)
     - unless: ls /usr/local/azure-kubelogin/{{ azurekubelogin.version }}
 
 azurekubelogin:

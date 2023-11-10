@@ -9,6 +9,7 @@ common:
     - subversion
     - age
     - jq
+    - unzip
   debian:
     - python3-dev
     - build-essential
