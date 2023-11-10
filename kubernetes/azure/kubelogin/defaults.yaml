@@ -1,0 +1,4 @@
+azurekubelogin:
+  enabled: true
+  version: 0.0.33
+  

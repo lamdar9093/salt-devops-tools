@@ -16,7 +16,7 @@ aquasecurity:
   trivy:
     enabled: true
   falco:
-    enabled: true
+    enabled: false
 
 hashicorp:
   terraform:
@@ -29,9 +29,12 @@ pulumi:
 
 kubernetes:
   cli:
-    enabled: false
+    enabled: true
   helm:
-    enabled: false
+    enabled: true
+  azure:
+    kubelogin:
+      enabled: true
 
 ldap:
   enabled: true
