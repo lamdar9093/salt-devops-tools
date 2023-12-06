@@ -44,7 +44,7 @@ sudo mkdir -vp /srv/pillar \
 && cp -vf /srv/salt/pillar.top.sls.example /srv/pillar/top.sls
 ```
 
-Edit the `/etc/pillar/devops.sls` to customize installed tools.
+Edit the `/srv/pillar/devops.sls` to customize installed tools.
 
 **example**:
 
