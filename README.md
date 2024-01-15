@@ -28,7 +28,7 @@ sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg \
 Run the following commands to clone the repository and set appropriate permissions.
 
 ```bash
-sudo git clone https://github.com/fjudith/salt-ubuntu-devops-tools /srv/salt \
+sudo git clone https://github.com/lamdar9093/salt-devops-tools.git /srv/salt \
 && sudo chown -R $(id -un) /srv/salt
 ```
 
